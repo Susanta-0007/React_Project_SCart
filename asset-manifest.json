@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/%20React_Project_SCart/static/css/main.cdc899d0.css",
+    "main.js": "/%20React_Project_SCart/static/js/main.ca4725b3.js",
+    "index.html": "/%20React_Project_SCart/index.html",
+    "main.cdc899d0.css.map": "/%20React_Project_SCart/static/css/main.cdc899d0.css.map",
+    "main.ca4725b3.js.map": "/%20React_Project_SCart/static/js/main.ca4725b3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cdc899d0.css",
+    "static/js/main.ca4725b3.js"
+  ]
+}
