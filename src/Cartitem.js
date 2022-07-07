@@ -1,23 +1,55 @@
-import React from "react";
+import React from 'react';
 
-class CartIteam extends React.Component {
-  render() {
-    return (
-      <div className="cart-iteam">
-        <div className="left-block">
-          <img />
-        </div>
-        <div className="right-block">
-            <div>Phone</div>
-            <div>Rs. 999</div>
-            <div>Qty :1</div>
-            <div className="cart-iteam-actions">
-                    {/*Button*/}
-            </div>
+const CartItem = (props) => {
+  const { price, title, qty } = props.product;
+  const {
+    product,
+    onIncreaseQuantity,
+    onDecreaseQuantity,
+    onDeleteProduct
+  } = props;
+  return (
+    <div className="cart-item">
+      <div className="left-block">
+        <img style={styles.image} src={product.img} />
+      </div>
+      <div className="right-block">
+        <div style={ { fontSize: 25 } }>{title}</div>
+        <div style={ { color: '#777' } }>Rs {price} </div>
+        <div style={ { color: '#777' } }>Qty: {qty} </div>
+        <div className="cart-item-actions">
+          {/* Buttons */}
+          <img
+            alt="increase"
+            className="action-icons"
+            src="https://cdn-icons-png.flaticon.com/128/1828/1828817.png"
+            onClick={() => onIncreaseQuantity(product)}
+          />
+          <img
+            alt="decrease"
+            className="action-icons"
+            src="https://cdn-icons-png.flaticon.com/128/334/334047.png"
+            onClick={() => onDecreaseQuantity(product)}
+          />
+          <img
+            alt="delete"
+            className="action-icons"
+            src="https://t3.ftcdn.net/jpg/04/99/21/94/240_F_499219419_QijUDdzTghJpwH7OJg0dj15ffCNwvLyo.jpg"
+            onClick={() => onDeleteProduct(product.id)}
+          />
         </div>
       </div>
-    );
+    </div>
+  );
+}
+
+const styles = {
+  image: {
+    height: 110,
+    width: 110,
+    borderRadius: 4,
+    background: '#ccc'
   }
 }
 
-export default CartIteam;
+export default CartItem;
